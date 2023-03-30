@@ -80,13 +80,6 @@ module "http_sg" {
   vpc_id      = module.vpc.vpc_id
 
    ingress_with_cidr_blocks = [
-/*    {
-      from_port   = 443
-      to_port     = 443
-      protocol    = "tcp"
-      description = "${var.environment}-https to ELB"
-      cidr_blocks = "0.0.0.0/0"
-    }, */
     {
       from_port   = 80
       to_port     = 80

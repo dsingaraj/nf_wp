@@ -15,7 +15,7 @@ output "ec2_ssh_IP" {
 }
 
 output "DB_Username" {
-  value       = module.db.db_instance_username
+  value       = try(module.db.db_instance_username,"")
   sensitive   = true
   description = "Database Username"
 }
@@ -28,7 +28,7 @@ output "DB_Name" {
 
 output "DB_Password" {
   value       = module.db.db_instance_password
-  #sensitive   = true
+  sensitive   = true
   description = "Database password"
 }
 

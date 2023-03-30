@@ -16,24 +16,9 @@ module "alb" {
     {
       port               = "80"
       protocol           = "HTTP"
-      #action_type        = "redirect"
       target_group_index = 0
-      /* redirect = {
-        port        = "443"
-        protocol    = "HTTPS"
-        status_code = "HTTP_301"
-      } */
     }
   ]
-
-/*   https_listeners = [
-    {
-      port               = 443
-      protocol           = "HTTPS"
-      certificate_arn    = module.acm.acm_certificate_arn
-      target_group_index = 0
-    } 
-  ]*/
 
   target_groups = [
     {
